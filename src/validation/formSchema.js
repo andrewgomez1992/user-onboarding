@@ -16,7 +16,7 @@ const formSchema = yup.object().shape({
         .min(8, 'Password must be 8 characters long'),
     tos: yup
         .boolean()
-        .oneOf([true], 'Must accept the conditions even though you do not know what they are')
+        .oneOf([true], 'Must accept the conditions even though you do not know what they are') // research
 
 })
 

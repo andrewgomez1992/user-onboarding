@@ -19,11 +19,14 @@ const initialFormErrors = {
   tos: ''
 }
 
+const initialDisabled = true;
+
 function App() {
 
   const [formValues, setFormValues] = useState(initialFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
+  const [disabled, setDisabled] = useState(initialDisabled);
 
   const handleSubmit = () => {
     axios.post('https://reqres.in/api/users', formValues)
@@ -41,8 +44,13 @@ function App() {
 
   const handleChange = (name, value) => {
     validate(name, value);
-    setFormValues({ ...formValues, [name]: value })
+    setFormValues({ ...formValues, [name]: value });
   }
+
+  useEffect(() => {
+    // 🔥 STEP 9- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
+    schema.isValid(formValues).then(valid => setDisabled(!valid))
+  }, [formValues])
 
   return (
     <div className="App">
@@ -51,7 +59,7 @@ function App() {
         change={handleChange}
         errors={formErrors}
         submit={handleSubmit}
-      // disabled={disabled}
+        disabled={disabled}
       />
       {users.map(user => (
         <div key={user.id}>

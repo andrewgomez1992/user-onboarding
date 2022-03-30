@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
+import React from 'react';
 
 const Form = (props) => {
-    const { change, submit, errors } = props;
+    const { change, submit, errors, disabled } = props;
     const { name, email, password, checked } = props.values;
 
     const onChange = evt => {
@@ -18,8 +16,8 @@ const Form = (props) => {
     }
 
     return (
-        <div className='main'>
-            <h1>Create a friend</h1>
+        <div>
+            <h1>Create a Friend</h1>
             <p>{errors.name}</p>
             <p>{errors.password}</p>
             <p>{errors.email}</p>
@@ -57,11 +55,11 @@ const Form = (props) => {
                         checked={checked}
                         onChange={onChange}
                     />
-
                 </label>
                 <br />
-                <input type='submit' value='Create!' />
+                <button disabled={disabled}>submit</button>
             </form>
+            <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oswald&display=swap" rel="stylesheet"></link>
         </div>
     )
 }
