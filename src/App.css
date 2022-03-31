@@ -50,3 +50,11 @@ label {
   background-color: black;
   font-family: 'Indie Flower', cursive;
 }
+
+.error {
+  color: red;
+}
+
+.create {
+  color: aquamarine;
+}

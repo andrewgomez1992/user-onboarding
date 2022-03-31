@@ -63,8 +63,8 @@ function App() {
       />
       {users.map(user => (
         <div key={user.id}>
-          <p>{user.createdAt}</p>
-          <p>{user.email}</p>
+          <p className='create'>{user.createdAt}</p>
+          <p className='create'>{user.email}</p>
         </div>
       ))}
     </div>

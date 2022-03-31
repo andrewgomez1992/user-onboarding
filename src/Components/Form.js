@@ -18,10 +18,10 @@ const Form = (props) => {
     return (
         <div>
             <h1>Create a Friend</h1>
-            <p>{errors.name}</p>
-            <p>{errors.password}</p>
-            <p>{errors.email}</p>
-            <p>{errors.checked}</p>
+            <p className='error'>{errors.name}</p>
+            <p className='error'>{errors.password}</p>
+            <p className='error'>{errors.email}</p>
+            <p className='error'>{errors.checked}</p>
             <form onSubmit={onSubmit}>
                 <label>Name
                     <input
@@ -57,7 +57,7 @@ const Form = (props) => {
                     />
                 </label>
                 <br />
-                <button disabled={disabled}>submit</button>
+                <button disabled={disabled}>CREATE</button>
             </form>
             <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oswald&display=swap" rel="stylesheet"></link>
         </div>
