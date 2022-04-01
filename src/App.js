@@ -72,3 +72,6 @@ function App() {
 }
 
 export default App;
+
+
+// for initial cypress push( i know cypress isnt even install yet going to dinner ill be back :) 
