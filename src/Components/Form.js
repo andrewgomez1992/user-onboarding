@@ -25,6 +25,7 @@ const Form = (props) => {
             <form onSubmit={onSubmit}>
                 <label>Name
                     <input
+                        data-test-id="fullname"
                         type='text'
                         name='name'
                         value={name}
@@ -33,6 +34,7 @@ const Form = (props) => {
                 </label>
                 <label>Email
                     <input
+                        data-test-id="email"
                         type='email'
                         name='email'
                         value={email}
@@ -41,6 +43,7 @@ const Form = (props) => {
                 </label>
                 <label>Password
                     <input
+                        data-test-id="password"
                         type='password'
                         name='password'
                         value={password}
@@ -50,6 +53,7 @@ const Form = (props) => {
                 <br />
                 <label>Terms of Service
                     <input
+                        data-test-id="accepted"
                         type='checkbox'
                         name='tos'
                         checked={checked}
@@ -57,7 +61,7 @@ const Form = (props) => {
                     />
                 </label>
                 <br />
-                <button disabled={disabled}>CREATE</button>
+                <button data-test-id="submitBtn" disabled={disabled}>CREATE</button>
             </form>
             <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Oswald&display=swap" rel="stylesheet"></link>
         </div>
